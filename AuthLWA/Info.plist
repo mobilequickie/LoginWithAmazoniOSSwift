@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>APIKey</key>
+	<string>eyJhbGciOiJSU0EtU0hBMjU2IiwidmVyIjoiMSJ9.eyJ2ZXIiOiIzIiwiZW5kcG9pbnRzIjp7ImF1dGh6IjoiaHR0cHM6Ly93d3cuYW1hem9uLmNvbS9hcC9vYSIsInRva2VuRXhjaGFuZ2UiOiJodHRwczovL2FwaS5hbWF6b24uY29tL2F1dGgvbzIvdG9rZW4ifSwiY2xpZW50SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1vYTItY2xpZW50LmRhMTY3NGEzMWE4NTRiOTA4OWVmODcyMGI3OWQxNGVhIiwiYXBwRmFtaWx5SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi5hMmYxNWRhNTM3N2Q0OGIyYjk0ZDM1OTNkODcwMjcxYyIsImJ1bmRsZVNlZWRJZCI6Im1lLmF3c21vYmlsZS5BdXRoTFdBIiwiYnVuZGxlSWQiOiJtZS5hd3Ntb2JpbGUuQXV0aExXQSIsImlzcyI6IkFtYXpvbiIsInR5cGUiOiJBUElLZXkiLCJhcHBWYXJpYW50SWQiOiJhbXpuMS5hcHBsaWNhdGlvbi1jbGllbnQuMjkxZWFmZmY4ZWMxNDgxOTk4MGY0MmQyZDM5MDI1NDYiLCJ0cnVzdFBvb2wiOm51bGwsImFwcElkIjoiYW16bjEuYXBwbGljYXRpb24tY2xpZW50LjI5MWVhZmZmOGVjMTQ4MTk5ODBmNDJkMmQzOTAyNTQ2IiwiaWQiOiI5MDg0OWFhMC05Nzk1LTQwMGYtYTIwNi03ZWM5NWMyYzM1NDgiLCJpYXQiOiIxNTQxMDk3NDI5NzMwIn0=.JhSBYkCAwt8f3bS14ClVv36YFScCy9JETVKGr2stPocOiyHRD0Lc6HaIFl6FGe+2ybwbFqYn/Cb5p6HUrANAKtVu9N4i5wTozMgg1ENikg3cvoVcOnXkTjY/34zje4fVJcNINmeEz29wC07x4ZZrI5X/VK8ByL9UF4Vqm/tEQLEzne+QiX7ZDIkolX571rMmsZ81YdkoqFQbZX881kbSjVspdy4GQcjYHcUsGzzq7djrv/lewJyy5N3Z8edBjQpWCMnXfwm2ero0vNQLYMdiUgBXAMstlGXDOj9Po1WNTC79Pt7hjqfiOG6nwaXUvqSgjs964FK4nREolxKMvfF51A==</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>me.awsmobile.authlwa</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>amzn-me.awsmobile.authlwa</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIMainStoryboardFile</key>
+	<string>Main</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+</dict>
+</plist>
