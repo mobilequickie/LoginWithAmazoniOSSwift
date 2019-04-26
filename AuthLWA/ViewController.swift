@@ -2,12 +2,9 @@
 //  ViewController.swift
 //  AuthLWA
 //
-//  Created by Hills, Dennis on 10/31/18.
-//  Copyright © 2018 Hills, Dennis. All rights reserved.
+//  Created by Hills, Dennis on 4/26/19.
+//  Copyright © 2019 Hills, Dennis. All rights reserved.
 //
-//  Gist: https://gist.github.com/mobilequickie/346caccc2a07f18e2bea4fdf6fe8fd3f
-//
-
 import UIKit
 import LoginWithAmazon
 
@@ -40,20 +37,32 @@ class ViewController: UIViewController, AIAuthenticationDelegate {
         }
     }
     
-    // The login request succeeded and the user is now authenticated via LWA
+    // Login with Amazon - Successful login callback
     func requestDidSucceed(_ apiResult: APIResult!) {
-        print("LWA Succeeded!")
         
-        DispatchQueue.main.async(execute: { () -> Void in
-            self.btnLWALogin.isEnabled = false
-            self.btnLWALogout.isEnabled = true
-        })
-        
-        if (apiResult.api == API.authorizeUser) {
-            AIMobileLib.getAccessToken(forScopes: ["profile"], withOverrideParams: nil, delegate: self)
-        }
-        else {
-            print("Success! Token: \(apiResult.result ?? "nil")")
+        switch (apiResult.api) {
+            
+        case API.authorizeUser:
+            LoginWithAmazonProxy.sharedInstance.getAccessToken(delegate: self)
+            
+        case API.getAccessToken:
+            guard let LWAtoken = apiResult.result as? String else { return }
+            print("LWA Access Token: \(LWAtoken)")
+            
+            // Get the user profile from LWA (OPTIONAL)
+            LoginWithAmazonProxy.sharedInstance.getUserProfile(delegate: self)
+            
+        case API.getProfile:
+            print("LWA User Profile: \(String(describing: apiResult.result))")
+            
+        case API.clearAuthorizationState:
+            print("user logged out from LWA")
+            
+            // Sign out from AWSMobileClient
+            AWSMobileClient.sharedInstance().signOut()
+            
+        default:
+            print("unsupported")
         }
     }
     
@@ -61,32 +70,4 @@ class ViewController: UIViewController, AIAuthenticationDelegate {
     func requestDidFail(_ errorResponse: APIError!) {
         print("Error: \(errorResponse.error.message ?? "nil")")
     }
-    
-    // Staging future code update
-    //https://github.com/grimlockrocks/login-with-amazon-swift3-sample-app/pull/2/commits/b1e6c60d6569d63e4d4dc46d3b26e57f4efae76a
-    
-//    func blockerCode() {
-//        let request = AMZNAuthorizeRequest()
-//        request.scopes = [AMZNProfileScope.profile()]
-//        //request.interactiveStrategy = AMZNInteractiveStrategy.never
-//
-//        AMZNAuthorizationManager.shared().authorize(request) { (authResult, userDidCancel, error) in
-//            if ((error) != nil) {
-//                print("AMZNAuthorizationManager Error: \(error!.localizedDescription)")
-//            } else if (userDidCancel) {
-//            } else {
-//                // Authentication was successful.
-//                let accessToken = authResult?.token;
-//                let user = authResult?.user;
-//                let userID = user?.userID;
-//
-//                print("Login successfully! \(accessToken, user, userID)")
-//                DispatchQueue.main.async(execute: { () -> Void in
-//                    self.btnLWALogin.isEnabled = false
-//                    self.btnLWALogout.isEnabled = true
-//                })
-//            }
-//        }
-//    }
 }
-
